@@ -1,4 +1,7 @@
+package fein91.arrays;
 
+
+import fein91.arrays.SquareArrayStarPrinter;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map.Entry;
@@ -14,8 +17,10 @@ import java.util.Map.Entry;
  */
 public class Main {
 
+    public static final int SQUARE_ARR_SIZE = 5;
+    
     public static void main(String[] args) throws CloneNotSupportedException {
-        SquareArrayStarPrinter.print(5);
+        SquareArrayStarPrinter.print(7);
         //printSquareArrIdx(3);
         //printSquareArrMainDiag(5);
         //printSquareArrUnderMainDiag(3);

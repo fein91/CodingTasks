@@ -1,3 +1,4 @@
+package fein91.arrays;
 
 import java.util.Arrays;
 
@@ -20,19 +21,23 @@ public class SquareArrayStarPrinter {
         for (int n = 0; n < k; n++) {
             for (int i = 0; i < size; i++) {
                 for (int j = 0; j < size; j++) {
-                    if (i == mid - j - 1) {
-                        result[i][j] = k - n;
+                    //first quater diagonal
+                    if ((i == mid - j - 1 + n) && (i <= mid - 1) && (j <= mid - 1)) {
+                        result[i][j] = n + 1;
                     }
-//                    if (i == size - j - 1 - mid) {
-//                        result[i][j] = n;
-//                    }
-                    if (i == j + mid - 1) {
-                        result[i][j] = k - n;
+                    //second quater diagonal
+                    if ((i == j - mid + 1 + n) && (i <= mid - 1) && (j > mid - 1)) {
+                        result[i][j] = n + 1;
                     }
-                    if (i == j - mid + 1) {
-                        result[i][j] = k - n;
+                    //third quater diagonal
+                    if ((i == j + mid - 1 - n) && (i > mid - 1) && (j <= mid - 1)) {
+                        result[i][j] = n + 1;
                     }
 
+                    //fourt quater diagonal
+                    if ((j == (size - 1) - (i - mid + 1) - n) && (i > mid - 1) && (j > mid - 1)) {
+                        result[i][j] = n + 1;
+                    }
                 }
             }
         }
