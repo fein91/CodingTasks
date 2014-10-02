@@ -42,14 +42,19 @@ public class BinarySearcherTest {
     @Test
     public void testSearch() {
         System.out.println("search");
-        int[] input = {1, 2, 4, 6, 8, 9, 13, 15, 16};
-        int key = 15;
-        
+        int[] input = {1, 2, 4, 5, 6, 8, 9, 13, 15, 16, 20, 26, 28,};
+        int key = 2;
+
         BinarySearcher searcher = new BinarySearcher(input);
         searcher.setKey(key);
         int result = searcher.search();
         //int expResult = input[result];
-        System.out.println("Position of key: "+key+" value of input["+result+"]="+input[result]);
+        if (result != -1) {
+            System.out.println("Position of key: " + key + " value of input[" + result + "]=" + input[result]);
+        } else {
+            System.out.println("NO MATCHES");
+        }
+        
         //assertEquals(expResult, result);
     }
 }

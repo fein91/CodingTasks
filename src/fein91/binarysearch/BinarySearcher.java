@@ -12,7 +12,7 @@ public class BinarySearcher {
 
     private final int[] input;
     private int key;
-    //private int middle;
+    private int prevMiddle;
 
     public BinarySearcher(int[] input) {
         this.input = input;
@@ -37,7 +37,7 @@ public class BinarySearcher {
     }
 
     private int searchPair(int from, int to) {
-        int middle = (to - from + 1) / 2;
+        int middle = from + (to - from + 1) / 2;
         if (key > input[middle]) {
             return search(middle + 1, to);
         } else if (key < input[middle]) {
@@ -59,7 +59,7 @@ public class BinarySearcher {
     //from 5 to 7
 // {14, 17, 19}
     private int searchOdd(int from, int to) {
-        int middle = (to - from + 1) / 2;
+        int middle = from + (to - from + 1) / 2;
         if (key > input[middle]) {
             return search(middle + 1, to);
         } else if (key < input[middle]) {
