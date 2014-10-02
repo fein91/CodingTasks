@@ -1,4 +1,4 @@
-package fein91.arrays;
+
 
 
 import fein91.arrays.SquareArrayStarPrinter;
