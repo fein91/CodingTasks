@@ -1,5 +1,5 @@
 
-
+package fein91;
 
 import fein91.arrays.SquareArrayStarPrinter;
 import java.util.Arrays;
