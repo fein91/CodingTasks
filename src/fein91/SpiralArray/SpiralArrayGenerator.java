@@ -28,7 +28,7 @@ public class SpiralArrayGenerator {
     }
 
     private static void fillTop(int[][] input, int frameNumber) {
-        for (int j = 0; j < input.length - frameNumber; j++) {
+        for (int j = 0; j < input.length - frameNumber*2; j++) {
             input[frameNumber][j + frameNumber] = counterValue++;
         }
     }

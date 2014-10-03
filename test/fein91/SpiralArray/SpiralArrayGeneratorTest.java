@@ -47,7 +47,7 @@ public class SpiralArrayGeneratorTest {
         System.out.println("generate");
         int size = 0;
         int[][] expResult = null;
-        int[][] result = SpiralArrayGenerator.generate(4);
+        int[][] result = SpiralArrayGenerator.generate(5);
          for (int[] row : result) {
             System.out.println(Arrays.toString(row));
         }
