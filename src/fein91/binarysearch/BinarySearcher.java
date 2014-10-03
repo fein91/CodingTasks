@@ -27,6 +27,11 @@ public class BinarySearcher {
     }
 
     private int search(int from, int to) {
+        for (int i = from; i < to; i++) {
+            System.out.print(input[i] + ", ");
+        }
+        System.out.println("");
+
         if (to == from) {
             return (input[to] == key ? to : -1);
         } else if ((to - from + 1) % 2 == 0) {
@@ -82,5 +87,6 @@ public class BinarySearcher {
 // {13, 14, 17}
     public void setKey(int key) {
         this.key = key;
+        prevMiddle = 0;
     }
 }

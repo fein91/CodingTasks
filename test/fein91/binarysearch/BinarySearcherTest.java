@@ -21,7 +21,7 @@ public class BinarySearcherTest {
 
     public BinarySearcherTest() {
     }
-    int[] input;
+    int[] randomInput;
     int key;
     private static final int SIZE = 10000;
 
@@ -35,7 +35,7 @@ public class BinarySearcherTest {
 
     @Before
     public void setUp() {
-        input = generateArray(SIZE);
+        randomInput = generateArray(SIZE);
     }
 
     @After
@@ -48,22 +48,35 @@ public class BinarySearcherTest {
     @Test
     public void testSearch() {
         System.out.println("search");
-
+        //randomSearch();
+        int[] input = {1, 5, 7, 9, 10, 15, 17, 19, 20, 25, 29, 34, 40, 43};
+        key = 7;
         BinarySearcher searcher = new BinarySearcher(input);
-        for (int i = 0; i < 1000; i++) {
-            searcher.setKey(i);
+        searcher.setKey(key);
+        int result = searcher.search();
+
+        if (result != -1) {
+            System.out.println("Position of key: " + key + " value of input[" + result + "]=" + input[result]);
+        } else {
+            System.out.println("NO MATCHES for: " + key);
+        }
+    }
+
+    //assertEquals(expResult, result);
+    private void randomSearch() {
+        BinarySearcher searcher = new BinarySearcher(randomInput);
+        for (int i = 0; i < 10; i++) {
+            key = new Random().nextInt(1000);
+            searcher.setKey(key);
             int result = searcher.search();
             //int expResult = input[result];
             if (result != -1) {
-                System.out.println("Position of key: " + key + " value of input[" + result + "]=" + input[result]);
+                System.out.println("Position of key: " + key + " value of input[" + result + "]=" + randomInput[result]);
             } else {
-                System.out.println("NO MATCHES for: " + i);
+                System.out.println("NO MATCHES for: " + key);
             }
         }
 
-
-
-        //assertEquals(expResult, result);
     }
 
     private int[] generateArray(int size) {
