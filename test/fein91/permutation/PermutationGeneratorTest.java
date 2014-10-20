@@ -3,11 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package fein91.SpiralArray;
 
-import fein91.arrays.SquareArrayPrinter;
-import fein91.arrays.SquareArrayStarPrinter;
-import java.util.Arrays;
+package fein91.permutation;
+
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,42 +17,36 @@ import static org.junit.Assert.*;
  *
  * @author otatarik
  */
-public class SpiralArrayGeneratorTest {
-
-    public SpiralArrayGeneratorTest() {
+public class PermutationGeneratorTest {
+    
+    public PermutationGeneratorTest() {
     }
-
+    
     @BeforeClass
     public static void setUpClass() {
     }
-
+    
     @AfterClass
     public static void tearDownClass() {
     }
-
+    
     @Before
     public void setUp() {
     }
-
+    
     @After
     public void tearDown() {
     }
 
     /**
-     * Test of generate method, of class SpiralArrayGenerator.
+     * Test of generate method, of class PermutationGenerator.
      */
     @Test
     public void testGenerate() {
         System.out.println("generate");
-        int size = 10;
-        int[][] expResult = null;
-        SpiralArrayGenerator instance = SpiralArrayGenerator.getInstance();
-        instance.setSize(size);
-        int[][] result = instance.generate();
-        SquareArrayPrinter.print(result);
-//        for (int[] row : result) {
-//            System.out.println(Arrays.toString(row));
-//        }
+        int size = 4;
+        PermutationGenerator instance = new PermutationGenerator();
+        instance.generate(size);
     }
-
+    
 }
